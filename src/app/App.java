@@ -2,6 +2,7 @@ package app;
 
 import java.util.Scanner;
 import app.TaggingMode;
+import app.ViewingMode;
 
 public class App {
 
@@ -21,5 +22,6 @@ public class App {
         choice = kb.next();
         System.out.println("Your choice was: " + choice);
         TaggingMode.choose();
+        ViewingMode.choose();
     }
 }
