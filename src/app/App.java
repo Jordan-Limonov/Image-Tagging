@@ -7,7 +7,8 @@ import app.ViewingMode;
 public class App {
 
     public static Scanner kb = new Scanner(System.in);
-    
+    public static String[] placeholder = new String[20];
+
     private App() {
 
     }
@@ -20,8 +21,23 @@ public class App {
         System.out.println("T = Tagging mode");
         System.out.println("V = Viewing mode");
         choice = kb.next();
-        System.out.println("Your choice was: " + choice);
-        TaggingMode.choose();
-        ViewingMode.choose();
+        // if(choice == "V" || choice == "v"){
+        //     ViewingMode.choose();
+        // }else if(choice == "T" || choice == "t"){
+        //     TaggingMode.choose();
+        // }else{
+        //     System.out.println("Please choose V or T");
+        // }
+        selectMode(choice);
+    }
+    public static void selectMode(String mode) throws Exception {
+        if(mode.equals("V") || mode.equals("v")){
+            ViewingMode.choose();
+        }else if(mode.equals("T") || mode.equals("t")){
+            TaggingMode.choose();
+        }else{
+            System.out.println("Please choose V or T");
+            main(placeholder);
+        }
     }
 }
